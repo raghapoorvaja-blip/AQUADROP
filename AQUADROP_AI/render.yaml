@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: aquadrop-ai
+    runtime: docker
+    plan: starter          # needs a paid plan for the persistent disk
+    disk:
+      name: aquadrop-data
+      mountPath: /data
+      sizeGB: 1
+    envVars:
+      - key: OPENWEATHER_API_KEY
+        sync: false
+      - key: WEATHER_CITY
+        value: Tirunelveli,IN
